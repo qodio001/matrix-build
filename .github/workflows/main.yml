@@ -1,0 +1,13 @@
+on:
+  push:
+    branches: [main]
+
+jobs:
+  example-matrix:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        environment: [development, staging, production]
+    steps:
+      - name: Print current environment
+        run: echo "Current environment is ${{ matrix.environment }}"
